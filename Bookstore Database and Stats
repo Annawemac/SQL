@@ -1,0 +1,43 @@
+ /**Bookstore:
+Romance (15) 
+Fantasy (12)
+Horror (10)
+Thriller (8)
+Mystery (11)
+Historical Fiction (20) 
+Self Help (13)
+Cookbook (20)
+Spiritual (16)
+Science Fiction (19)
+Children's (14)
+Memoir (28)
+Biography (30)
+Autobiography (29) 
+Social Science (22)
+**/
+
+--Create a bookstore database
+
+CREATE TABLE bookstore(id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, aisle INTEGER); 
+
+INSERT INTO bookstore VALUES (1, "Romance", 300, 15, 10); 
+INSERT INTO bookstore VALUES (2, "Fantasy", 100, 12, 4); 
+INSERT INTO bookstore VALUES (3, "Horror", 35, 10, 7); 
+INSERT INTO bookstore VALUES (4, "Thriller", 200, 8, 7);
+INSERT INTO bookstore VALUES (5, "Mystery", 70, 11, 7); 
+INSERT INTO bookstore VALUES (6, "Historical Fiction", 60, 20, 2); 
+INSERT INTO bookstore VALUES (7, "Self Help", 600, 13, 1);
+INSERT INTO bookstore VALUES (8, "Cook Book", 90, 20, 3);
+INSERT INTO bookstore VALUES (9, "Spiritual", 220, 16, 4); 
+INSERT INTO bookstore VALUES (10, "Science Fiction", 225, 19, 5);
+INSERT INTO bookstore VALUES (11, "Children's", 120, 14, 9); 
+INSERT INTO bookstore VALUES (12, "Memoir", 50, 28, 2);
+INSERT INTO bookstore VALUES (13, "Biography", 119, 30, 2); 
+INSERT INTO bookstore VALUES (14, "Autobiography", 120, 29, 2);
+INSERT INTO bookstore VALUES (15, "Social Science", 45, 22, 5); 
+
+--display the database ordered by price
+SELECT * FROM bookstore ORDER BY price;
+
+--How many books are in the entire bookstore? 
+SELECT SUM (quantity) FROM bookstore; 
