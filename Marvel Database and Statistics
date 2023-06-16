@@ -1,5 +1,4 @@
---Create a Marvels Database
-
+/**
 CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
     name TEXT,
     popularity INTEGER,
@@ -14,7 +13,8 @@ CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
     durability INTEGER,
     energy_Projection INTEGER,
     fighting_Skills INTEGER); 
-    
+    **/
+--Create a Marvels Database
     
 INSERT INTO marvels VALUES(1, "Spider Man", 1, "Good", "Male", 1.78, 75.75, "USA", 4, 4, 3, 3, 1, 4); 
 INSERT INTO marvels VALUES(2, "Iron Man", 20, "Neutral", "Male", 1.98, 102.58, "USA", 6, 6, 5, 6, 6, 4); 
