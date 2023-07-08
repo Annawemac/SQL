@@ -1,0 +1,56 @@
+CREATE TABLE moviestars (id INTEGER PRIMARY KEY,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT INTO moviestars (fullname,age) VALUES ("Ryan Reynolds", 46);
+INSERT INTO moviestars (fullname,age) VALUES ("Blake Lively", 35); 
+INSERT INTO moviestars (fullname,age) VALUES ("Eva Mendes", 49);
+INSERT INTO moviestars (fullname,age) VALUES ("Ryan Gosling", 42); 
+INSERT INTO moviestars (fullname,age) VALUES ("Alexis Bledel", 41); 
+INSERT INTO moviestars (fullname,age) VALUES ("Vincent Kartheiser", 44);
+INSERT INTO moviestars (fullname,age) VALUES ("Zendaya Coleman", 26); 
+INSERT INTO moviestars (fullname,age) VALUES ("Tom Holland", 27); 
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY,
+    Celebrity_id INTEGER,
+    title TEXT,
+    Release_year INTEGER); 
+    
+INSERT INTO movies (Celebrity_id, title, Release_year) VALUES (1, "Green Lantern", 2011);
+INSERT INTO movies (Celebrity_id,title, Release_year) VALUES (2, "Green Lantern", 2011);
+INSERT INTO movies (Celebrity_id,title, Release_year) VALUES (3, "The Place Beyond the Pines", 2012);
+INSERT INTO movies (Celebrity_id,title, Release_year) VALUES (4, "The Place Beyond the Pines", 2012); 
+INSERT INTO movies (Celebrity_id, title, Release_year) VALUES (5, "Sisterhood of The Traveling Pants", 2005);
+INSERT INTO movies (Celebrity_id,title, Release_year) VALUES (6, "The Unsaid", 2001); 
+INSERT INTO movies (Celebrity_id, title, Release_year) VALUES (7, "Dune", 2021);
+INSERT INTO movies (Celebrity_id, title, Release_year) VALUES (8, "Spider-Man: Far From Home", 2019); 
+
+CREATE TABLE relationships (id INTEGER PRIMARY KEY, 
+    Celebrity_id INTEGER,
+    Partner TEXT);
+    
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (1, "Blake Lively");
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (2, "Ryan Reynolds");
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (3, "Ryan Gosling");
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (4, "Eva Mendes");
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (5, "Vincent Kartheiser"); 
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (6, "Alexis Bledel");
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (7, "Tom Holland");
+INSERT INTO relationships (Celebrity_id, Partner) VALUES (8, "Zendaya Coleman");
+
+SELECT moviestars.fullname, movies.title 
+FROM moviestars
+JOIN movies 
+ON moviestars.id = movies.celebrity_id; 
+
+SELECT moviestars.fullname, relationships.Partner
+FROM moviestars
+JOIN relationships 
+ON moviestars.id = relationships.celebrity_id; 
+
+
+
+
+    
+    
+
