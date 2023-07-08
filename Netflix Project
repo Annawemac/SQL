@@ -1,23 +1,24 @@
-SELECT count(*) FROM "netflix_people"
-
-SELECT people.show_id, people.director, 
-titles.type, 
-titles.title
-FROM "netflix_people" people 
-LEFT OUTER JOIN "netflix_titles_info" titles
-ON people.show_id = titles.show_id
+--Create a SELECT showing how many movies are in the database
 
 SELECT count(*) FROM "netflix_titles_info" WHERE type= 'Movie';
 
+--Create a SELECT showing when the most recent batch of tv shows/movies were added to the database
+
 SELECT MAX(date(date_added)) FROM "netflix_titles_info"; 
 
+--Create a list of movies and tv shows using ascending order
+
 SELECT title FROM "netflix_titles_info" ORDER BY title asc; 
+
+--Create a JOIN to pull data from both tables showing who was the director of 'The Starling'
 
 SELECT director
 FROM "netflix_titles_info" titles
 LEFT JOIN "netflix_people" people 
 ON titles.show_id = people.show_id
 WHERE titles.title = 'The Starling' 
+
+--Use a JOIN to display the oldest movie and the year it was released
 
 SELECT title, release_year
 FROM "netflix_titles_info"
