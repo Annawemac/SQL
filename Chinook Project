@@ -98,8 +98,45 @@ ON cust.SupportRepId = emp.EmployeeId
 
 JOIN chinook.Invoices Inv 
 ON Inv.CustomerId = cust.CustomerId
-
 WHERE emp.Title = 'Sales Support Agent' 
 AND Inv.InvoiceDate LIKE '2009%' 
 GROUP BY emp.FirstName
 ORDER BY (round(sum(Inv.Total), 2))  DESC LIMIT 1;
+
+
+#15 Show customers who live in New York and iclude their first and last name
+SELECT FirstName, LastName 
+FROM chinook.customers 
+WHERE city = 'New York' 
+
+#16 Create a query that shows the customers First Name, Last Name, Email, Phone, and their Support Rep
+SELECT FirstName, LastName, Email, Phone, SupportRepID
+FROM chinook.customers
+
+#17 Show the employees who are IT staff
+SELECT * FROM chinook.employees
+WHERE title = 'IT Staff' 
+
+#18 Find a unique list of companies that the customers work for and don't include Null 
+SELECT distinct company FROM chinook.customers
+WHERE company <> 'Not Null'
+
+#19 Provide a query that list all artists name and media types 
+SELECT m.Name as 'Media Type', a.Name as 'Artist Name' 
+FROM chinook.artists as a 
+JOIN chinook.media_types as m 
+ON a.ArtistId = M.MediaTypeId
+
+
+
+
+
+
+
+
+
+
+
+
+
+
